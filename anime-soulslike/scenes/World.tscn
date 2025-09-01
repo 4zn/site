@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[node name="World" type="Node2D"]
+
+[node name="Floor" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.14)
