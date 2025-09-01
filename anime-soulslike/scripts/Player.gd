@@ -33,7 +33,7 @@ func _ready() -> void:
 	hitbox.monitoring = false
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if is_attacking or is_rolling:
 		move_and_slide()
 		return

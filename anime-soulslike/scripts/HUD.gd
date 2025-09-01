@@ -14,8 +14,10 @@ func _process(_delta: float) -> void:
 		_connect_player(Game.player_ref)
 
 func _connect_player(player: Node) -> void:
-	player.connect("health_changed", Callable(self, "_on_health_changed"))
-	player.connect("stamina_changed", Callable(self, "_on_stamina_changed"))
+	if not player.is_connected("health_changed", Callable(self, "_on_health_changed")):
+		player.connect("health_changed", Callable(self, "_on_health_changed"))
+	if not player.is_connected("stamina_changed", Callable(self, "_on_stamina_changed")):
+		player.connect("stamina_changed", Callable(self, "_on_stamina_changed"))
 
 func _on_health_changed(current: int, max_value: int) -> void:
 	health_bar.max_value = max_value
